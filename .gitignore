@@ -1,0 +1,27 @@
+# General
+.DS_Store
+.env
+.idea/
+.vscode/
+
+# Build artifacts
+dist/
+build/
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Logs
+logs/
+*.log
+.env
+
+.agentic/
+
+*.jpg
+*.png 
+*.webp
+*.jpeg
+
+# Operating System files
+Thumbs.db
