@@ -1,27 +1,58 @@
-# General
-.DS_Store
-.env
-.idea/
-.vscode/
-
-# Build artifacts
-dist/
+# Python
+__pycache__/
+*.py[cod]
+*.so
+*.pyd
+*.pyo
+*.egg
+*.egg-info/
+.eggs/
 build/
-node_modules/
-npm-debug.log
-yarn-error.log
+dist/
+*.manifest
+*.spec
 
-# Logs
-logs/
+# Virtual environments
+.venv/
+env/
+venv/
+ENV/
+env.bak/
+
+# IDE / Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*.swn
+*.bak
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb~
+
+# Logs & dumps
 *.log
-.env
+*.out
+*.err
+*.pid
+*.gz
+*.tmp
 
-.agentic/
+# OS files
+.DS_Store
+Thumbs.db
+
+# Project-specific
+.env
+.env.local
+.env.*.local
+outputs/
+cache/
+data/tmp/
+
 
 *.jpg
 *.png 
-*.webp
 *.jpeg
-
-# Operating System files
-Thumbs.db
+*.webp
