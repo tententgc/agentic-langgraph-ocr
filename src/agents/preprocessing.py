@@ -3,6 +3,7 @@ from ..utils import image_io
 
 class PreprocessingAgent:
     def run(self, state: Dict) -> Dict:
+        print("preprcessing")
         audit = state.setdefault("audit_log", [])
         if state.get("pages"):
             idx = state.get("page_index", 0)

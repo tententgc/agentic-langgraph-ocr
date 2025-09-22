@@ -6,6 +6,7 @@ class FXConverterAgent:
         self.rates = rates or {"USD": 36.5, "THB": 1.0, "EUR": 39.0}
 
     def run(self, state: Dict) -> Dict:
+        print("fx_convertor")
         audit = state.setdefault("audit_log", [])
         inv = state.get("invoice")
         if not inv:

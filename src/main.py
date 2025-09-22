@@ -16,8 +16,7 @@ def main():
         "errors": [],
         "audit_log": [],
     }
-
-    out = app.invoke(state)
+    out = app.invoke(state, {"recursion_limit": 100})
     print("\\n=== RESULT ===")
     print("Exports:", out.get("exports"))
     print("Warnings:", out.get("warnings"))

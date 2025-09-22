@@ -3,6 +3,7 @@ from ..schema.invoice import Invoice
 
 class ValidatorAgent:
     def run(self, state: Dict) -> Dict:
+        print("validator")
         audit = state.setdefault("audit_log", [])
         inv: Invoice = state.get("invoice")
         if not inv:

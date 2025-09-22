@@ -55,7 +55,19 @@ def build_graph():
     g.add_edge("ocr", "quality")
 
     def route_after_quality(state: Dict):
-        return "preprocess" if state.get("needs_re_ocr") else "extract"
+        attempts = state.get("re_ocr_attempts", 0)
+        if state.get("needs_re_ocr"):
+            max_attempts = state.get("max_re_ocr_attempts", 2)
+            if attempts >= max_attempts:
+                state["needs_re_ocr"] = False
+                state.setdefault("warnings", []).append(
+                    "quality_gate: retry limit reached; proceeding with low confidence OCR"
+                )
+                return "extract"
+            state["re_ocr_attempts"] = attempts + 1
+            return "preprocess"
+        state["re_ocr_attempts"] = 0
+        return "extract"
 
     g.add_conditional_edges("quality", route_after_quality, {
         "preprocess": "preprocess",

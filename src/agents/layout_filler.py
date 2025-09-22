@@ -3,6 +3,7 @@ from ..schema.invoice import Invoice
 
 class LayoutFillerAgent:
     def run(self, state: Dict) -> Dict:
+        print("layout_fillter")
         audit = state.setdefault("audit_log", [])
         inv: Invoice = state.get("invoice")
         blocks = state.get("ocr_blocks", [])

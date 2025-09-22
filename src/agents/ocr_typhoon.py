@@ -14,6 +14,7 @@ class OCRTyphoonAgent:
         self.params = params or {}
 
     def run(self, state: Dict) -> Dict:
+        print("ocr_typhoon")
         audit = state.setdefault("audit_log", [])
 
         image_bytes = state.get("input_bytes")
@@ -43,4 +44,6 @@ class OCRTyphoonAgent:
             state.setdefault("warnings", []).append("OCR returned empty text")
 
         audit.append("ocr: typhoon (multipart)")
+        print(state["ocr_text"])
+        print(audit)
         return state

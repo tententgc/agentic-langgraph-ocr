@@ -6,6 +6,7 @@ class QualityGateAgent:
         self.min_chars = min_chars
 
     def run(self, state: Dict) -> Dict:
+        print('quality_gate')
         audit = state.setdefault("audit_log", [])
         conf = state.get("ocr_confidence", 0.0)
         text = state.get("ocr_text", "")

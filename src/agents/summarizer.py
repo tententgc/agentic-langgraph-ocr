@@ -32,6 +32,7 @@ class SummarizerAgent:
     # --------------- Public API ---------------
 
     def run(self, state: Dict) -> Dict:
+        print("summarizer")
         audit = state.setdefault("audit_log", [])
         inv: Optional[Invoice] = state.get("invoice")
         layout = state.get("filled_layout", {})

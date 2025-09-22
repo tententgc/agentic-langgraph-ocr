@@ -6,6 +6,7 @@ class CalculatorAgent:
         self.default_tax_rate = default_tax_rate
 
     def run(self, state: Dict) -> Dict:
+        print("calculator")
         audit = state.setdefault("audit_log", [])
         inv: Invoice = state.get("invoice")
         if not inv:

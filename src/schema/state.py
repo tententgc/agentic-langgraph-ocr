@@ -31,3 +31,5 @@ class PipelineState(TypedDict, total=False):
     errors: List[str]
     audit_log: List[str]
     needs_re_ocr: bool
+    re_ocr_attempts: int
+    max_re_ocr_attempts: int

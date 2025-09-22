@@ -8,6 +8,7 @@ class ExporterAgent:
         self.outdir = outdir
 
     def run(self, state: Dict) -> Dict:
+        print("exporter")
         os.makedirs(self.outdir, exist_ok=True)
         audit = state.setdefault("audit_log", [])
         inv: Invoice = state.get("invoice")

@@ -10,6 +10,7 @@ class PDFPagerAgent:
         self.dpi = dpi
 
     def run(self, state: Dict) -> Dict:
+        print("pdf_pager")
         audit = state.setdefault("audit_log", [])
         path = state.get("input_path")
         if not path or not path.lower().endswith(".pdf"):
